@@ -1,42 +1,35 @@
-/*Implement following program using 2D array
-3. C program to read a matrix and print it's diagonal elements*/
+/*Implement following programs in lab sessions show me the output and then take a backup
+3) C Program to remove all spaces from a given string in C
+*/
 #include<stdio.h>
 int main(){
-    int r,c;
-    int matrix[100][100];
-    printf("Enter no of rows in matrix : ");
-    scanf("%d",&r);
-    printf("Enter no of columns in matrix : ");
-    scanf("%d",&c);
-    if (r==c)
+    int L,j=0;
+    char word[100],w,new[100];
+    printf("Enter lenth of Word : ");
+    scanf("%d",&L);
+    scanf("%c",&w);
+    printf("Enter word : ");
+    for (int i = 0; i < L; i++)
     {
-        for (int i = 0; i < r; i++)
+        scanf("%c",&word[i]);
+    }
+    printf("Your word is : ");
+    for (int i = 0; i < L; i++)
     {
-        for (int j = 0; j < c; j++)
+        printf("%c",word[i]);
+    }
+    for (int i = 0; i < L; i++)
+    {
+        if ((int)word[i]!=32)
         {
-        printf("Enter number in row %d and column %d : ",i+1,j+1);
-        scanf("%d",&matrix[i][j]);
+            new[j]=word[i];
+            j++;;
         }
-
-    }  
-    printf("Your entered Matrix is :\n");  
-    for (int i = 0; i < r; i++)
+    }
+    printf("\nNew spaceless word is : ");
+    for (int i = 0; i < L; i++)
     {
-        for (int j = 0; j < c; j++)
-        {
-        printf("%d ",matrix[i][j]);
-        }
-        printf("\n");
+        printf("%c",new[i]);
     }
-    printf("Diagonal elements of Above Matrix are :\n");
-    for (int i = 0; i < r; i++)
-    {
-        printf("%d ",matrix[i][i]);
-    }  
-    printf("\n"); 
-    }
-    else{
-        printf("Matrix should be square Matrix");
-    }
-
+       
 }

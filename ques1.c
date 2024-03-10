@@ -1,80 +1,40 @@
-/*Implement following program using 2D array
-1. C program to find sum of two matrices
+/*Implement following programs in lab sessions show me the output and then take a backup
+1) C program to print all VOWEL and CONSONANT characters separately.
 */
 #include<stdio.h>
 int main(){
-    int r1,r2,c1,c2;
-    int matrix1[100][100],matrix2[100][100],sum[100][100];
-    printf("Enter no of rows in 1st matrix : ");
-    scanf("%d",&r1);
-    printf("Enter no of columns 1st matrix : ");
-    scanf("%d",&c1);
-    printf("Enter no of rows in 2nd matrix : ");
-    scanf("%d",&r2);
-    printf("Enter no of columns in 2nd matrix : ");
-    scanf("%d",&c2);
-    if (r1==r2 && c1==c2)
+    int j=0,k=0,l=0;
+    char letters[50],vowels[50],consonants[50];
+    printf("Array of Alfabets is : ");
+    for (char i = 'A'; i <= 'Z'; i++)
     {
-        int r=r1;
-        int c=c1;
-        printf("For First Matrix\n");
-        for (int i = 0; i < r1; i++)
-    {
-        for (int j = 0; j < c1; j++)
-        {
-        printf("Enter number in row %d and column %d : ",i+1,j+1);
-        scanf("%d",&matrix1[i][j]);
-        }
-
-    }  
-    printf("For Second Matrix\n");
-    for (int i = 0; i < r2; i++)
-    {
-        for (int j = 0; j < c2; j++)
-        {
-        printf("Enter number in row %d and column %d : ",i+1,j+1);
-        scanf("%d",&matrix2[i][j]);
-        }
-
+        letters[j]=i;
+        j++;
     }
-    printf("Your first Matrix is :\n");  
-    for (int i = 0; i < r1; i++)
+    for (int j = 0; j < 27; j++)
     {
-        for (int j = 0; j < c1; j++)
-        {
-        printf("%d ",matrix1[i][j]);
-        }
-        printf("\n");
-
+        printf("%c ",letters[j]);
     }
-    printf("Your second Matrix is :\n");  
-    for (int i = 0; i < r2; i++)
+    for (int j = 0; j < 27; j++)
     {
-        for (int j = 0; j < c2; j++)
+        if (letters[j]=='A' || letters[j]=='E' || letters[j]=='I' || letters[j]=='O' || letters[j]=='U')
         {
-        printf("%d ",matrix2[i][j]);
+            vowels[k]=letters[j];
+            k++;
         }
-        printf("\n");
-    }
-    for (int i = 0; i < r; i++)
-    {
-        for (int j = 0; j < c; j++)
-        {
-            sum[i][j]=matrix1[i][j] + matrix2[i][j];
+        else{
+            consonants[l]=letters[j];
+            l++;
         }
     }
-    printf("Summation Matrix for those is :\n");
-    for (int i = 0; i < r; i++)
+    printf("\nArray of vowels is : "); 
+    for (int t = 0; t < k; t++)
     {
-        for (int j = 0; j < c; j++)
-        {
-            printf("%d ",sum[i][j]);
-        }
-        printf("\n");
+        printf("%c ",vowels[t]);
+    }   
+    printf("\nArray of consonants is : ");    
+    for (int t = 0; t < l; t++)
+    {
+        printf("%c ",consonants[t]);
     }
-    }
-    else{
-        printf("No of rows and columns of two matrix should be equal");
-    } 
-    return 0;
 }

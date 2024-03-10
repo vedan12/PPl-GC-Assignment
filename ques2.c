@@ -1,80 +1,63 @@
-/*Implement following program using 2D array
-2. Write a program to perform subtraction of two matrices
+/*Implement following programs in lab sessions show me the output and then take a backup
+2) C program to count upper case, lower case and special characters in a string.
 */
 #include<stdio.h>
 int main(){
-    int r1,r2,c1,c2;
-    int matrix1[100][100],matrix2[100][100],sum[100][100];
-    printf("Enter no of rows in 1st matrix : ");
-    scanf("%d",&r1);
-    printf("Enter no of columns 1st matrix : ");
-    scanf("%d",&c1);
-    printf("Enter no of rows in 2nd matrix : ");
-    scanf("%d",&r2);
-    printf("Enter no of columns in 2nd matrix : ");
-    scanf("%d",&c2);
-    if (r1==r2 && c1==c2)
+    int L,u=0,l=0,s=0,n=0;
+    char word[100],w,upper[50],lower[50],special[50],num[50];
+    printf("Enter lenth of Word : ");
+    scanf("%d",&L);
+    scanf("%c",&w);
+    printf("Enter word : ");
+    for (int i = 0; i < L; i++)
     {
-        int r=r1;
-        int c=c1;
-        printf("For First Matrix\n");
-        for (int i = 0; i < r1; i++)
-    {
-        for (int j = 0; j < c1; j++)
-        {
-        printf("Enter number in row %d and column %d : ",i+1,j+1);
-        scanf("%d",&matrix1[i][j]);
-        }
-
-    }  
-    printf("For Second Matrix\n");
-    for (int i = 0; i < r2; i++)
-    {
-        for (int j = 0; j < c2; j++)
-        {
-        printf("Enter number in row %d and column %d : ",i+1,j+1);
-        scanf("%d",&matrix2[i][j]);
-        }
-
+        scanf("%c",&word[i]);
     }
-    printf("Your first Matrix is :\n");  
-    for (int i = 0; i < r1; i++)
+    printf("Your word is : ");
+    for (int i = 0; i < L; i++)
     {
-        for (int j = 0; j < c1; j++)
-        {
-        printf("%d ",matrix1[i][j]);
-        }
-        printf("\n");
-
+        printf("%c",word[i]);
     }
-    printf("Your second Matrix is :\n");  
-    for (int i = 0; i < r2; i++)
+    for (int i = 0; i < L; i++)
     {
-        for (int j = 0; j < c2; j++)
+        if((int)word[i] >= 65 && (int)word[i] <= 90)
         {
-        printf("%d ",matrix2[i][j]);
+            upper[u]=word[i];
+            u++;
         }
-        printf("\n");
-    }
-    for (int i = 0; i < r; i++)
-    {
-        for (int j = 0; j < c; j++)
+        else if((int)word[i] >= 97 && (int)word[i] <= 122)
         {
-            sum[i][j]=matrix1[i][j] - matrix2[i][j];
+            lower[l]=word[i];
+            l++;
+        }
+        else if((int)word[i] >= 48 && (int)word[i] <= 57)
+        {
+            num[n]=word[i];
+            n++;
+        }
+        else{
+            special[s]=word[i];
+            s++;
         }
     }
-    printf("Substraction Matrix for those is :\n");
-    for (int i = 0; i < r; i++)
+    printf("\nThere are %d uppercase letters in word and those are : ",u);
+    for (int i = 0; i < u; i++)
     {
-        for (int j = 0; j < c; j++)
-        {
-            printf("%d ",sum[i][j]);
-        }
-        printf("\n");
+        printf("%c ",upper[i]);
     }
+    printf("\nThere are %d lowercase letters in word and those are : ",l);
+    for (int i = 0; i < l; i++)
+    {
+        printf("%c ",lower[i]);
     }
-    else{
-        printf("No of rows and columns of two matrix should be equal");
-    } 
-    return 0;
+    printf("\nThere are %d special characters in word and those are : ",s);
+    for (int i = 0; i < s; i++)
+    {
+        printf("%c ",special[i]);
+    }
+    printf("\nThere are %d numbers in word and those are : ",n);
+    for (int i = 0; i < n; i++)
+    {
+        printf("%c ",num[i]);
+    }   
 }
