@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(){
-	int l,i,w=0,c=0;
+	int l,i,w=0;
 	char statement[100];
 	printf("Enter the length of sentence : ");
 	scanf("%d",&l);
@@ -14,14 +14,6 @@ int main(){
 		}
 		else{
 			continue;
-		}
-	}
-	for(i=0;i<l;i++){
-		if((int)statement[i]==32){
-			continue;
-		}
-		else{
-			c++;
 		}
 	}
 	printf("There are %d words , %d letters and %d spaces in above sentence",w+1,l-w+1,w);
